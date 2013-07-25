@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!--NetworkUnit part -->
+	<bean id="networkUnit" class="com.lxt2.framework.NetworkUnit">
+		<property name="id" value="36" />
+		<property name="name" value="通信平台" />
+		<property name="invoker">
+			<ref local="networkUnitInvoker" />
+		</property>
+		<property name="isMain" value="true" />
+		<property name="commonFunctionMap">
+			<map>
+				<entry key="601" value-ref="hubImpl" />
+			</map>
+		</property>
+		<property name="commonTaskMap">
+			<map>
+				<entry key="1" value-ref="taskExecution" />
+				<entry key="2" value-ref="taskSchedule" />
+			</map>
+		</property>
+		<property name="taskMap">
+			<map>
+				<entry key="101" value-ref="ndClientVerifyTask" />
+				<entry key="106" value-ref="dwDirtyWordTask" />
+				<entry key="108" value-ref="mopDeliverSyncTask" />
+				<entry key="109" value-ref="phaseSyncAllTask1136" />
+				<entry key="110" value-ref="gatewayConfigLoadTask" />
+				<entry key="113" value-ref="PerformanceLoggerTask" />
+				<entry key="114" value-ref="clearHubTask" />
+				<entry key="115" value-ref="resClearTask" />
+				<entry key="118" value-ref="clearRespTask" />
+				 <entry key="122" value-ref="clearHubTask2" />
+				<entry key="308" value-ref="clumpedSubmitClearTask" />
+				<entry key="400" value-ref="dynamicLoadTask" />
+			</map>
+		</property>
+		<property name="moduleMap">
+			<map>
+				<entry key="1136" value-ref="mtpModule1136" />
+				<entry key="1336" value-ref="rptModule1336" />
+				<entry key="1436" value-ref="mopModule1436" />
+				<entry key="1536" value-ref="clumpedModule1536" />
+				<entry key="3601" value-ref="mtsGatewayModule3601" />
+				<entry key="3602" value-ref="mtsGatewayModule3602" />
+				<entry key="3603" value-ref="mtsGatewayModule3603" />
+				<entry key="3604" value-ref="mtsGatewayModule3604" />
+				<entry key="3605" value-ref="mtsGatewayModule3605" />
+				<entry key="3606" value-ref="mtsGatewayModule3606" />
+				<entry key="3607" value-ref="mtsGatewayModule3607" />
+				<entry key="3608" value-ref="mtsGatewayModule3608" />
+				<entry key="3609" value-ref="mtsGatewayModule3609" />
+				<entry key="3610" value-ref="mtsGatewayModule3610" />
+				<entry key="3611" value-ref="mtsGatewayModule3611" />
+				<entry key="3612" value-ref="mtsGatewayModule3612" />
+				<entry key="3613" value-ref="mtsGatewayModule3613" />
+				<entry key="3614" value-ref="mtsGatewayModule3614" />
+				<entry key="3615" value-ref="mtsGatewayModule3615" />
+				<entry key="3616" value-ref="mtsGatewayModule3616" />
+				<entry key="3617" value-ref="mtsGatewayModule3617" />
+				<entry key="3618" value-ref="mtsGatewayModule3618" />
+				<entry key="3619" value-ref="mtsGatewayModule3619" />
+				<entry key="3620" value-ref="mtsGatewayModule3620" />
+				<entry key="3621" value-ref="mtsGatewayModule3621" />
+				<entry key="3622" value-ref="mtsGatewayModule3622" />
+				<entry key="3623" value-ref="mtsGatewayModule3623" />
+			</map>
+		</property>
+		<property name="subFunctionMap">
+			<map>
+				<entry key="1" value-ref="taskExecution" />
+				<entry key="2" value-ref="taskSchedule" />
+				<entry key="601" value-ref="hubImpl" />
+				
+				<entry key="1136" value-ref="mtpModule1136" />
+				<entry key="1336" value-ref="rptModule1336" />
+				<entry key="1436" value-ref="mopModule1436" />
+				<entry key="1536" value-ref="clumpedModule1536" />
+
+				<entry key="3601" value-ref="mtsGatewayModule3601" />
+				<entry key="3602" value-ref="mtsGatewayModule3602" />
+				<entry key="3603" value-ref="mtsGatewayModule3603" />
+				<entry key="3604" value-ref="mtsGatewayModule3604" />
+				<entry key="3605" value-ref="mtsGatewayModule3605" />
+				<entry key="3606" value-ref="mtsGatewayModule3606" />
+				<entry key="3607" value-ref="mtsGatewayModule3607" />
+				<entry key="3608" value-ref="mtsGatewayModule3608" />
+				<entry key="3609" value-ref="mtsGatewayModule3609" />
+				<entry key="3610" value-ref="mtsGatewayModule3610" />
+				<entry key="3611" value-ref="mtsGatewayModule3611" />
+				<entry key="3612" value-ref="mtsGatewayModule3612" />
+				<entry key="3613" value-ref="mtsGatewayModule3613" />
+				<entry key="3614" value-ref="mtsGatewayModule3614" />
+				<entry key="3615" value-ref="mtsGatewayModule3615" />
+				<entry key="3616" value-ref="mtsGatewayModule3616" />
+				<entry key="3617" value-ref="mtsGatewayModule3617" />
+				<entry key="3618" value-ref="mtsGatewayModule3618" />
+				<entry key="3619" value-ref="mtsGatewayModule3619" />
+				<entry key="3620" value-ref="mtsGatewayModule3620" />
+				<entry key="3621" value-ref="mtsGatewayModule3621" />
+				<entry key="3622" value-ref="mtsGatewayModule3622" />
+				<entry key="3623" value-ref="mtsGatewayModule3623" />
+				<entry key="9999" value-ref="reloadFunction" />
+			</map>
+		</property>
+		<property name="taskSchedule">
+			<ref local="taskSchedule" />
+		</property>
+		<property name="taskExecution">
+			<ref local="taskExecution" />
+		</property>
+	</bean>
+
+	<!--CommonTask part -->
+	<bean id="taskExecution" class="com.lxt2.framework.TaskExecution">
+		<property name="id" value="1" />
+		<property name="name" value="任务执行" />
+		<property name="taskType">
+			<value type="com.lxt2.framework.base.TaskType">HOST</value>
+		</property>
+                <property name="corePoolSize" value="100" />
+                <property name="maxPoolSize" value="200" />
+	</bean>
+	<bean id="taskSchedule" class="com.lxt2.framework.TaskSchedule">
+		<property name="id" value="2" />
+		<property name="name" value="任务调度" />
+		<property name="taskType">
+			<value type="com.lxt2.framework.base.TaskType">HOST</value>
+		</property>
+	</bean>
+	<!--Task part Start -->
+
+	<!--Invoker part -->
+	<bean id="networkUnitInvoker" class="com.lxt2.framework.control.NetworkUnitInvoker">
+		<property name="remoteVisitControl">
+			<ref local="webVisitControl" />
+		</property>
+		<property name="commandMap">
+			<map>
+				<entry key="start" value-ref="start" />
+				<entry key="pause" value-ref="pause" />
+				<entry key="resume" value-ref="resume" />
+				<entry key="stop" value-ref="stop" />
+				<entry key="exe" value-ref="exe" />
+				<entry key="add" value-ref="add" />
+				<entry key="remove" value-ref="remove" />
+				<entry key="list" value-ref="list" />
+				<entry key="listc" value-ref="listc" />
+				<entry key="listm" value-ref="listm" />
+				<entry key="listt" value-ref="listt" />
+				<entry key="liste" value-ref="liste" />
+				<entry key="listf" value-ref="listf" />
+				<entry key="queue" value-ref="queue" />
+				<entry key="view" value-ref="view" />
+				<entry key="viewall" value-ref="viewall" />
+				<entry key="getsystemconfig" value-ref="loadXmlConfigCmd"/>
+                                <entry key="viewsystemconfig" value-ref="viewSysemconfigCmd"/>
+                                <entry key="effectsystemconfig" value-ref="loadNodeListCmd"/>
+                                <entry key="resumesystemconfig" value-ref="GoBackConfigCmd"/>
+                                <entry key="resumeoldsystemconfig" value-ref="GoBackOriginalCmd"/>
+			</map>
+		</property>
+	</bean>
+	<!--Visit control part -->
+	<bean id="webVisitControl" class="com.lxt2.framework.control.WebVisitControl">
+	</bean>
+	<!--Command part -->
+	<!-- <bean id="viewall" class="com.lxt2.serverframe.networkunit.command.ViewAllCmd"> -->
+	<!-- <property name="node"> -->
+	<!-- <ref local="networkUnit" /> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+	<bean id="start" class="com.lxt2.framework.command.StartCmd" />
+	<bean id="pause" class="com.lxt2.framework.command.PauseCmd" />
+	<bean id="resume" class="com.lxt2.framework.command.ResumeCmd" />
+	<bean id="stop" class="com.lxt2.framework.command.StopCmd" />
+	<bean id="exe" class="com.lxt2.framework.command.ExecuteCmd" />
+	<bean id="add" class="com.lxt2.framework.command.AddTaskCmd" />
+	<bean id="remove" class="com.lxt2.framework.command.RemoveTaskCmd" />
+	<bean id="listm" class="com.lxt2.framework.command.ListModuleCmd" />
+	<bean id="list" class="com.lxt2.framework.command.ListCmd" />
+	<bean id="listc" class="com.lxt2.framework.command.ListCommonTaskCmd" />
+	<bean id="listt" class="com.lxt2.framework.command.ListScheduleTaskCmd" />
+	<bean id="liste" class="com.lxt2.framework.command.ListExecutionCmd" />
+	<bean id="listf" class="com.lxt2.framework.command.ListFunctionCmd" />
+	<bean id="view" class="com.lxt2.framework.command.ViewCmd" />
+	<bean id="viewall" class="com.lxt2.base.command.ViewAllCmd" />
+
+	<!-- 网元所有队列性能监视 -->
+	<bean id="queue" class="com.lxt2.framework.command.QueueMonitorCmd">
+	</bean>
+
+	<bean id="sysconfighelper" class="com.lxt2.framework.util.SysConfigHelper"
+		init-method="init">
+		<property name="configXmlPath" value="/36/config/systemconfig.xml" />
+	</bean>
+
+	<bean id="confighelper" class="com.lxt2.common.common.util.ConfigHelper"
+		init-method="init">
+		<property name="configPath" value="/36/config/config_*.xml" />
+	</bean>
+
+	<bean id="systemConfig" class="com.lxt2.base.CommunicateHelper" />
+
+	<bean id="staticHandle" class="com.lxt2.framework.util.GlobleStaticHandler"
+		init-method="init">
+		<property name="networkUnit" ref="networkUnit" />
+	</bean>
+
+	<bean id="ndSid" class="com.lxt2.base.persist.SID">
+		<property name="nodeId" value="35" />
+	</bean>
+
+	<bean id="ndMobileValidator" class="com.standardsm.phasenew.DefaultMobileValidator"
+		init-method="init" />
+
+	<bean id="ndNodeRefresh" class="com.lxt2.base.node.NodeRefreshThread"
+		init-method="init" destroy-method="destroy">
+		<property name="hub" ref="hubImpl" />
+	</bean>
+</beans>

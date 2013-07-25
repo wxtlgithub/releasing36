@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- 设置网关启动参数 -->
+	<bean id="moSgipParameter3609" class="com.lxt2.gateway.sms.protocol.sgip.Sgip_Parameter">
+		<property name="gatewayId" ref="gatewayId3609" />
+		<property name="gatewayXmlParser" ref="gatewayXml" />			
+		<property name="nodeGatewayID" value="${nodeID}" />			
+		<property name="typeSocket">
+			<bean id="com.lxt2.gateway.sms.protocol.sgip.Sgip_Parameter.SocketType_Connector"
+				class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+		</property>
+		<property name="typeLink" value="MO" />
+		<property name="protocolVersion" value="48" />
+		<property name="connectActiveTest" value="true" />
+		<property name="clearTime" value="10" />
+	</bean>
+	<!-- 网关配置 -->
+	<bean id="moSgipGatewayConfig3609" class="com.lxt2.gateway.sms.GatewayConfig" init-method="init">
+		<property name="gatewayXmlParser" ref="gatewayXml" />
+		<property name="nodeID" value="${nodeID}" />
+		<property name="protocol">
+			<bean id="com.lxt2.gateway.sms.GatewayConfig.SGIP"
+				class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+		</property>
+		<!-- 网关速度控制 -->
+		<property name="speeder">
+			<bean id="sgipEquidistributionSpeeder3609" class="com.techcenter.speed.IntervalSecondSpeeder" destroy-method="destroy">
+				<constructor-arg index="0" value="100" />
+			</bean>
+		</property>
+		<!-- 网关ID -->
+		<property name="gatewayID" ref="gatewayId3609" />
+		<!-- 下行队列 -->
+		<property name="submitQueue" ref="mtsPersistentSubmitQueueAdapter3609" />
+		<!-- 下行响应队列 -->
+		<property name="respQueue" ref="mtsPersistentRespQueueAdapter3609" />
+		<!-- 上行队列 -->
+		<property name="deliverQueue" ref="mtsPersistentDeliverQueueAdapter3609" />
+		<!-- 状态报告处理队列 -->
+		<property name="reportQueue" ref="mtsPersistentReportQueueAdapter3609" />
+		<!-- 重发错误码 -->
+		<property name="errorReSendMap">
+			<map>
+				<entry key="-8" value="-8"/>
+			</map>
+		</property>
+		<!-- 限制重发测试标志，true：限制，false：不限制 -->
+		<property name="errorReSendCountLimitFlag" value="true"/>
+		<!-- 数据采集 -->
+		<property name="dataGather" ref="mtsDataGather3609"/>
+		<!-- 总线 -->
+		<property name="hub" ref="hubImpl"/>
+	</bean>
+	<!-- 设置短信发送Support -->
+	<bean id="moSgipSupport3609" class="com.lxt2.gateway.sms.SgipSessionFlag" destroy-method="destory">
+		<property name="handler" value="moSgipHandler3609" />
+		<property name="param" ref="moSgipParameter3609" />
+		<property name="gwconfig" ref="mtsSgipGatewayConfig3609" />
+	</bean>
+	<bean name="moSgipHandler3609" class="com.lxt2.gateway.sms.protocol.sgip.SgipMO_Handler" scope="prototype">
+		<property name="gwconfig" ref="mtsSgipGatewayConfig3609" />
+	</bean>		
+</beans>
