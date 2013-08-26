@@ -10,7 +10,7 @@
 
 <!-- 	<bean id="saveLogger" class="com.lxt2.base.log.SaveLogger" destroy-method="destroy"/> -->
 	
-	<bean id="gatewayXml" class="com.lxt2.gateway.parse.GatewayXmlParser" init-method="init">
+	<bean id="gatewayXml" class="com.lxt2.gateway.yz.http.parse.GatewayXmlParser" init-method="init">
  		<property name="systemConfig" ref="systemConfig"/> 
 		<property name="persistDir" value="${CLASSPATH}/${nodeID}/persistent"/>
 		<property name="cmd" value="-U{0} -F{1} -Cgetgateway"/>

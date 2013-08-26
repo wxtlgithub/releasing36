@@ -23,7 +23,7 @@
 		<property name="id" value="108"/>
 		<property name="name" value="上行路由策略加载"/>
 		<property name="deliverRouter" ref="mopDeliverRouter" />
-		<property name="taskSchRule" value="@{sch(0,4)}"/>
+		<property name="taskSchRule" value="@{cycle(600)}"/>
 		<property name="commandMap">
 			<map>
 				<entry key="sync" value-ref="mopDeliverCmd"/>

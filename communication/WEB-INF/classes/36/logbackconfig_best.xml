@@ -49,7 +49,8 @@
 	<include file="${WORKDIR}WEB-INF/classes/36/logbackbest/gateway38.xml" />
 	<include file="${WORKDIR}WEB-INF/classes/36/logbackbest/gateway39.xml" />
 	<include file="${WORKDIR}WEB-INF/classes/36/logbackbest/gateway40.xml" />
-	<include file="${WORKDIR}WEB-INF/classes/36/logbackbest/rptprocess.xml" />
+        <include file="${WORKDIR}WEB-INF/classes/36/logbackbest/gateway64.xml" />
+ 	<include file="${WORKDIR}WEB-INF/classes/36/logbackbest/rptprocess.xml" />
 	<include file="${WORKDIR}WEB-INF/classes/36/logbackbest/moprocess.xml" />
 	<include file="${WORKDIR}WEB-INF/classes/36/logbackbest/hub.xml" />
 	<include file="${WORKDIR}WEB-INF/classes/36/logbackbest/rescenter.xml" />

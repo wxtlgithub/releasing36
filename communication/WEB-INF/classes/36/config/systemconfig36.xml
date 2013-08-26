@@ -145,6 +145,557 @@
 	</node>
 	<node>
 		<!-- 编号 -->
+		<id>21</id>
+		<!-- 名称 -->
+		<name>node21</name>
+		<clumpedType>N</clumpedType>
+		<!--IP地址 -->
+		<ip>58.68.247.139</ip>
+		<!--端口号 -->
+		<port>29921</port>
+		<!--命令访问路径 -->
+		<url>http://58.68.247.139:9021/communication/cmd.ashx?cmd=</url>
+		<!--是否为主控网元 -->
+		<isMain>false</isMain>
+		<isLocal>false</isLocal>
+		<!-- 任务模块 -->
+		<taskListSchedule>
+			<!-- Task1 -->
+			<function>
+				<!-- 编号 -->
+				<id>11</id>
+				<!-- 名称 -->
+				<name>task1</name>
+				<!-- bean -->
+				<bean>task1</bean>
+				<type>PS</type>
+
+				<!-- 配置 -->
+				<config key="config" desc="配置">
+				<![CDATA[ 
+					<function id="11" name="task1" desc="task1" bean="Task1">
+						<item key="isLoadFileLog" value="0" desc="是否导出文件日志.0不导出，1导出" />
+						<item key="maxNum" value="10000" desc="一次最大处理条数" />
+						<item key="taskSchRule" value="@{cycle(5)}" desc="执行规则" />
+					</function>
+				]]>
+				</config>
+			</function>
+			<!-- Task2 -->
+			<function>
+				<!-- 编号 -->
+				<id>12</id>
+				<!-- 名称 -->
+				<name>task2</name>
+				<!-- bean -->
+				<bean>task2</bean>
+				<type>MOP</type>
+				<!-- 配置 -->
+				<config key="config" desc="配置">
+				<![CDATA[ 
+					<function id="12" name="task2" desc="task2" bean="Task1">
+						<item key="isLoadFileLog" value="0" desc="是否导出文件日志.0不导出，1导出" />
+						<item key="maxNum" value="10000" desc="一次最大处理条数" />
+						<item key="taskSchRule" value="@{cycle(5)}" desc="执行规则" />
+					</function>
+				]]>
+				</config>
+			</function>
+		</taskListSchedule>
+		<!-- 通讯模块 -->
+		<moduleList>
+
+			<!-- 接口服务 -->
+			<function>
+				<id>1021</id>
+				<name>psModule1021</name>
+				<bean>psModule1021</bean>
+				<type>PS</type>
+				<config>
+				</config>
+			</function>
+			<function>
+				<id>1621</id>
+				<name>psModule1621</name>
+				<bean>psModule1621</bean>
+				<type>PS</type>
+				<config>
+				</config>
+			</function>
+			<!-- 下行处理 -->
+			<function>
+				<id>1121</id>
+				<name>mtpModule1121</name>
+				<bean>mtpModule1121</bean>
+				<type>MTP</type>
+				<config>
+				</config>
+			</function>
+
+			<!-- 状态报告匹配 -->
+			<function>
+				<id>1321</id>
+				<name>rptModule1321</name>
+				<bean>rptModule1321</bean>
+				<type>RPTP</type>
+				<config>
+				</config>
+			</function>
+
+			<!-- 上行 -->
+			<function>
+				<id>1421</id>
+				<name>mopModule1421</name>
+				<bean>mopModule1421</bean>
+				<type>MOP</type>
+				<!-- 配置 -->
+				<config key="config" desc="配置">
+				<![CDATA[ 
+				]]>
+				</config>
+			</function>
+
+			<!-- 分布式模块 -->
+			<function>
+				<id>1521</id>
+				<name>clumpedModule1521</name>
+				<bean>clumpedModule1521</bean>
+				<type>DISTRIBUTE</type>
+				<config></config>
+			</function>
+
+			<!-- 下行服务 移动 -->
+			<function>
+				<id>2101</id>
+				<name>mtsGatewayModule2101</name>
+				<bean>mtsGatewayModule2101</bean>
+				<type>MTS</type>
+				<config></config>
+			</function>
+
+
+			<!-- 下行服务 移动 -->
+			<function>
+				<id>2111</id>
+				<name>mtsGatewayModule2111</name>
+				<bean>mtsGatewayModule2111</bean>
+				<type>MTS</type>
+				<config></config>
+			</function>
+
+
+			<!-- 下行服务 移动 -->
+			<function>
+				<id>2112</id>
+				<name>mtsGatewayModule2112</name>
+				<bean>mtsGatewayModule2112</bean>
+				<type>MTS</type>
+				<config></config>
+			</function>
+			<!-- 下行服务 电信 -->
+			<function>
+				<id>2121</id>
+				<name>mtsGatewayModule2121</name>
+				<bean>mtsGatewayModule2121</bean>
+				<type>MTS</type>
+				<config></config>
+			</function>
+			<!-- 下行服务 联通 -->
+			<function>
+				<id>2104</id>
+				<name>mtsGatewayModule2104</name>
+				<bean>mtsGatewayModule2104</bean>
+				<type>MTS</type>
+				<config></config>
+			</function>
+			
+
+		</moduleList>
+		<!-- 功能模块 -->
+		<functionModuleList>
+			<function>
+				<!-- 编号 -->
+				<id>102</id>
+				<!-- 名称 -->
+				<name>module2</name>
+				<!-- bean -->
+				<bean>module2</bean>
+				<type>MTS</type>
+				<!-- 配置 -->
+				<config key="config" desc="配置">
+				<![CDATA[ 
+					<function id="102" name="module1" desc="module2" bean="module2">
+						<item key="isLoadFileLog" value="0" desc="是否导出文件日志.0不导出，1导出" />
+						<item key="maxNum" value="10000" desc="一次最大处理条数" />
+					</function>
+				]]>
+				</config>
+			</function>
+		</functionModuleList>
+	</node>
+	
+	<node>
+		<!-- 编号 -->
+		<id>22</id>
+		<!-- 名称 -->
+		<name>node22</name>
+		<!--分布式类型-->
+		<clumpedType>N</clumpedType>
+		<!--IP地址 -->
+		<ip>124.42.127.68</ip>
+		<!--端口号 -->
+		<port>28822</port>
+		<!--命令访问路径 -->
+		<url>http://124.42.127.68:8022/business/cmd.ashx?cmd=</url>
+		<!--是否为主控网元 -->
+		<isMain>false</isMain>
+		<isLocal>false</isLocal>
+		<!-- 任务模块 -->
+		<taskListSchedule>
+			<!-- Task1 -->
+			<function>
+				<!-- 编号 -->
+				<id>11</id>
+				<!-- 名称 -->
+				<name>task1</name>
+				<!-- bean -->
+				<bean>task1</bean>
+				<type>PS</type>
+
+				<!-- 配置 -->
+				<config key="config" desc="配置">
+				<![CDATA[ 
+<function id="11" name="task1" desc="task1" bean="Task1">
+<item key="isLoadFileLog" value="0" desc="是否导出文件日志.0不导出，1导出" />
+<item key="maxNum" value="10000" desc="一次最大处理条数" />
+<item key="taskSchRule" value="@{cycle(5)}" desc="执行规则" />
+</function>
+				]]>
+				</config>
+			</function>
+			<!-- Task2 -->
+			<function>
+				<!-- 编号 -->
+				<id>12</id>
+				<!-- 名称 -->
+				<name>task2</name>
+				<!-- bean -->
+				<bean>task2</bean>
+				<type>MOP</type>
+				<!-- 配置 -->
+				<config key="config" desc="配置">
+				<![CDATA[ 
+<function id="12" name="task2" desc="task2" bean="Task1">
+<item key="isLoadFileLog" value="0" desc="是否导出文件日志.0不导出，1导出" />
+<item key="maxNum" value="10000" desc="一次最大处理条数" />
+<item key="taskSchRule" value="@{cycle(5)}" desc="执行规则" />
+</function>
+				]]>
+				</config>
+			</function>
+		</taskListSchedule>
+		<!-- 通讯模块 -->
+		<moduleList>
+
+			<!-- 接口服务 -->
+			<function>
+				<id>1022</id>
+				<name>psModule1022</name>
+				<bean>psModule1022</bean>
+				<type>PS</type>
+				<config>
+				</config>
+			</function>
+
+			<!-- 下行处理 -->
+			<function>
+				<id>1102</id>
+				<name>mtpModule1102</name>
+				<bean>mtpModule1102</bean>
+				<type>MTP</type>
+				<config>
+				</config>
+			</function>
+
+			<!-- 状态报告匹配 -->
+			<function>
+				<id>1302</id>
+				<name>rptModule1302</name>
+				<bean>rptModule1302</bean>
+				<type>RPTP</type>
+				<config>
+				</config>
+			</function>
+
+			<!-- 上行 -->
+			<function>
+				<id>1402</id>
+				<name>mopModule1402</name>
+				<bean>mopModule1402</bean>
+				<type>MOP</type>
+				<!-- 配置 -->
+				<config key="config" desc="配置">
+				<![CDATA[ 
+				]]>
+				</config>
+			</function>
+
+			<!-- 分布式模块 -->
+			<function>
+				<id>1502</id>
+				<name>clumpedModule1502</name>
+				<bean>clumpedModule1502</bean>
+				<type>DISTRIBUTE</type>
+				<config></config>
+			</function>
+		</moduleList>
+		<!-- 功能模块 -->
+		<functionModuleList>
+			<function>
+				<!-- 编号 -->
+				<id>102</id>
+				<!-- 名称 -->
+				<name>module2</name>
+				<!-- bean -->
+				<bean>module2</bean>
+				<type>MTS</type>
+				<!-- 配置 -->
+				<config key="config" desc="配置">
+				<![CDATA[ 
+<function id="102" name="module1" desc="module2" bean="module2">
+<item key="isLoadFileLog" value="0" desc="是否导出文件日志.0不导出，1导出" />
+<item key="maxNum" value="10000" desc="一次最大处理条数" />
+</function>
+				]]>
+				</config>
+			</function>
+		</functionModuleList>
+	</node>
+	<!-- 远程 -->
+	<node>
+		<!-- 编号 -->
+		<id>23</id>
+		<!-- 名称 -->
+		<name>node23</name>
+		<!--分布式类型-->
+		<clumpedType>N</clumpedType>
+		<!--IP地址 -->
+		<ip>58.68.247.139</ip>
+		<!--端口号 -->
+		<port>28823</port>
+		<!--命令访问路径 -->
+		<url>http://58.68.247.139:8023/communication/cmd.ashx?cmd=</url>
+		<!--是否为主控网元 -->
+		<isMain>false</isMain>
+		<isLocal>false</isLocal>
+		<!-- 任务模块 -->
+		<taskListSchedule>
+			<!-- Task1 -->
+			<function>
+				<!-- 编号 -->
+				<id>11</id>
+				<!-- 名称 -->
+				<name>task1</name>
+				<!-- bean -->
+				<bean>task1</bean>
+				<type>PS</type>
+
+				<!-- 配置 -->
+				<config key="config" desc="配置">
+				<![CDATA[ 
+					<function id="11" name="task1" desc="task1" bean="Task1">
+						<item key="isLoadFileLog" value="0" desc="是否导出文件日志.0不导出，1导出" />
+						<item key="maxNum" value="10000" desc="一次最大处理条数" />
+						<item key="taskSchRule" value="@{cycle(5)}" desc="执行规则" />
+					</function>
+				]]>
+				</config>
+			</function>
+			<!-- Task2 -->
+			<function>
+				<!-- 编号 -->
+				<id>12</id>
+				<!-- 名称 -->
+				<name>task2</name>
+				<!-- bean -->
+				<bean>task2</bean>
+				<type>MOP</type>
+				<!-- 配置 -->
+				<config key="config" desc="配置">
+				<![CDATA[ 
+					<function id="12" name="task2" desc="task2" bean="Task1">
+						<item key="isLoadFileLog" value="0" desc="是否导出文件日志.0不导出，1导出" />
+						<item key="maxNum" value="10000" desc="一次最大处理条数" />
+						<item key="taskSchRule" value="@{cycle(5)}" desc="执行规则" />
+					</function>
+				]]>
+				</config>
+			</function>
+		</taskListSchedule>
+		<!-- 通讯模块 -->
+		<moduleList>
+
+			<!-- 接口服务 -->
+			<function>
+				<id>1003</id>
+				<name>psModule1003</name>
+				<bean>psModule1003</bean>
+				<type>PS</type>
+				<config>
+				</config>
+			</function>
+			<function>
+				<id>1013</id>
+				<name>psModule1013</name>
+				<bean>psModule1013</bean>
+				<type>PS</type>
+				<config>
+				</config>
+			</function>
+			<!-- 下行处理 -->
+			<function>
+				<id>1103</id>
+				<name>mtpModule1103</name>
+				<bean>mtpModule1103</bean>
+				<type>MTP</type>
+				<config>
+				</config>
+			</function>
+
+			<!-- 状态报告匹配 -->
+			<function>
+				<id>1303</id>
+				<name>rptModule1303</name>
+				<bean>rptModule1303</bean>
+				<type>RPTP</type>
+				<config>
+				</config>
+			</function>
+
+			<!-- 上行 -->
+			<function>
+				<id>1403</id>
+				<name>mopModule1403</name>
+				<bean>mopModule1403</bean>
+				<type>MOP</type>
+				<!-- 配置 -->
+				<config key="config" desc="配置">
+				<![CDATA[ 
+				]]>
+				</config>
+			</function>
+
+			<!-- 分布式模块 -->
+			<function>
+				<id>1503</id>
+				<name>clumpedModule1503</name>
+				<bean>clumpedModule1503</bean>
+				<type>DISTRIBUTE</type>
+				<config></config>
+			</function>
+
+			<!-- 下行服务 移动 -->
+			<function>
+				<id>2301</id>
+				<name>mtsGatewayModule2301</name>
+				<bean>mtsGatewayModule2301</bean>
+				<type>MTS</type>
+				<config></config>
+			</function>
+
+
+			<!-- 下行服务 移动 -->
+			<function>
+				<id>2311</id>
+				<name>mtsGatewayModule2311</name>
+				<bean>mtsGatewayModule2311</bean>
+				<type>MTS</type>
+				<config></config>
+			</function>
+
+
+			<!-- 下行服务 移动 -->
+			<function>
+				<id>2312</id>
+				<name>mtsGatewayModule2312</name>
+				<bean>mtsGatewayModule2312</bean>
+				<type>MTS</type>
+				<config></config>
+			</function>
+			<!-- 下行服务 电信 -->
+			<function>
+				<id>2303</id>
+				<name>mtsGatewayModule2303</name>
+				<bean>mtsGatewayModule2303</bean>
+				<type>MTS</type>
+				<config></config>
+			</function>
+			<!-- 下行服务 联通 -->
+			<function>
+				<id>2304</id>
+				<name>mtsGatewayModule2304</name>
+				<bean>mtsGatewayModule2304</bean>
+				<type>MTS</type>
+				<config></config>
+			</function>
+			<!-- 下行服务 -->
+			<!-- <function> -->
+			<!-- <id>1204</id> -->
+			<!-- <name>mtsGatewayModule1204</name> -->
+			<!-- <bean>mtsGatewayModule1204</bean> -->
+			<!-- <type>MTS</type> -->
+			<!-- <config></config> -->
+			<!-- </function> -->
+			<!-- 下行服务 -->
+			<!-- <function> -->
+			<!-- <id>1205</id> -->
+			<!-- <name>mtsGatewayModule1205</name> -->
+			<!-- <bean>mtsGatewayModule1205</bean> -->
+			<!-- <type>MTS</type> -->
+			<!-- <config></config> -->
+			<!-- </function> -->
+			<!-- 下行服务 -->
+			<!-- <function> -->
+			<!-- <id>1206</id> -->
+			<!-- <name>mtsGatewayModule1206</name> -->
+			<!-- <bean>mtsGatewayModule1206</bean> -->
+			<!-- <type>MTS</type> -->
+			<!-- <config></config> -->
+			<!-- </function> -->
+			<!-- 下行服务 -->
+			<!-- <function> -->
+			<!-- <id>1207</id> -->
+			<!-- <name>mtsGatewayModule1207</name> -->
+			<!-- <bean>mtsGatewayModule1207</bean> -->
+			<!-- <type>MTS</type> -->
+			<!-- <config></config> -->
+			<!-- </function> -->
+
+		</moduleList>
+		<!-- 功能模块 -->
+		<functionModuleList>
+			<function>
+				<!-- 编号 -->
+				<id>102</id>
+				<!-- 名称 -->
+				<name>module2</name>
+				<!-- bean -->
+				<bean>module2</bean>
+				<type>MTS</type>
+				<!-- 配置 -->
+				<config key="config" desc="配置">
+				<![CDATA[ 
+					<function id="102" name="module1" desc="module2" bean="module2">
+						<item key="isLoadFileLog" value="0" desc="是否导出文件日志.0不导出，1导出" />
+						<item key="maxNum" value="10000" desc="一次最大处理条数" />
+					</function>
+				]]>
+				</config>
+			</function>
+		</functionModuleList>
+	</node>
+	<node>
+		<!-- 编号 -->
 		<id>52</id>
 		<!-- 名称 -->
 		<name>node52</name>
