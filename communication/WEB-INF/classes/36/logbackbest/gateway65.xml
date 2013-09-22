@@ -1,5 +1,5 @@
 <included>
-	<property name="GATEWAYID" value="64" />
+	<property name="GATEWAYID" value="65" />
 	<!-- debug -->
 	<appender name="gwDebug" class="ch.qos.logback.core.rolling.RollingFileAppender">
     	<File>${USER_HOME}gateway/gateway_${GATEWAYID}/gw${GATEWAYID}-socket.log</File>
@@ -107,14 +107,14 @@
 	      	<onMismatch>DENY</onMismatch>
 	    </filter>
  	</appender>
- 	<logger name="gw64" level="debug" additivity="false">
+ 	<logger name="gw65" level="debug" additivity="false">
 		<appender-ref ref="gwDebug" />
 		<appender-ref ref="gwInfo" />
 		<appender-ref ref="gwWarn" />
 		<appender-ref ref="gwError" />
 	</logger>
 	
- 	<logger name="gwreport64" level="info" additivity="false">
+ 	<logger name="gwreport65" level="info" additivity="false">
 		<appender-ref ref="gwreportInfo" />
 	</logger>
 </included>

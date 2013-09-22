@@ -36,6 +36,7 @@
 				<entry key="308" value-ref="clumpedSubmitClearTask" />
 				<entry key="400" value-ref="dynamicLoadTask" />
                                 <entry key="510" value-ref="ContentMsgIDCleanYzTask" />
+                                <entry key="515" value-ref="ContentMsgIDCleanYzTask2" />
 			</map>
 		</property>
 		<property name="moduleMap">
@@ -68,6 +69,7 @@
 				<entry key="3622" value-ref="mtsGatewayModule3622" />
 				<entry key="3623" value-ref="mtsGatewayModule3623" />
                                 <entry key="3664" value-ref="mtsGatewayModule3664" />
+                                <entry key="3665" value-ref="mtsGatewayModule3665" />
 			</map>
 		</property>
 		<property name="subFunctionMap">
@@ -105,7 +107,8 @@
 				<entry key="3622" value-ref="mtsGatewayModule3622" />
 				<entry key="3623" value-ref="mtsGatewayModule3623" />
                                 <entry key="3664" value-ref="mtsGatewayModule3664" />
-				<entry key="9999" value-ref="reloadFunction" />
+				<entry key="3665" value-ref="mtsGatewayModule3665" />
+                                <entry key="9999" value-ref="reloadFunction" />
 			</map>
 		</property>
 		<property name="taskSchedule">

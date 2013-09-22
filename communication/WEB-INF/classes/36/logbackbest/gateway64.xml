@@ -107,14 +107,14 @@
 	      	<onMismatch>DENY</onMismatch>
 	    </filter>
  	</appender>
- 	<logger name="com.lxt2.gateway.yz.http" level="debug" additivity="false">
+ 	<logger name="gw64" level="debug" additivity="false">
 		<appender-ref ref="gwDebug" />
 		<appender-ref ref="gwInfo" />
 		<appender-ref ref="gwWarn" />
 		<appender-ref ref="gwError" />
 	</logger>
 	
- 	<logger name="gwreport" level="info" additivity="false">
+ 	<logger name="gwreport64" level="info" additivity="false">
 		<appender-ref ref="gwreportInfo" />
 	</logger>
 </included>

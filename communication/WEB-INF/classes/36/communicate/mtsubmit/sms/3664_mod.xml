@@ -6,6 +6,7 @@
 	<bean id="mtsGatewayModule3664" class="com.lxt2.gateway.yz.http.module.HttpSmsGatewayModule">
 		<property name="sender" ref="mtsSender3664" />
 		<property name="id" value="3664" />
+		<property name="gatewayId" ref="gatewayId3664" />
 		<property name="name" value="下行发送Http" />
 		<property name="hub" ref="hubImpl" />
 		<property name="submitQueue" ref="mtsSubmitQueue3664" />
@@ -45,6 +46,7 @@
 		<property name="cacheQueue" ref="mtsSubmitQueue3664" />
 		<property name="dataGather" ref="mtsDataGather3664" />
 		<property name="module" ref="mtsGatewayModule3664" />
+		<property name="gatewayId" ref="gatewayId3664" />
 	</bean>
 	<bean id="mtsDataGather3664" class="com.lxt2.gateway.yz.http.service.GatewayDataGather"
 		init-method="init" destroy-method="destroy">

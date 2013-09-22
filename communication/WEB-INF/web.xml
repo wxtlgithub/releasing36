@@ -90,7 +90,21 @@
 		<servlet-name>moRequest3664</servlet-name>
 		<url-pattern>/mo3664</url-pattern>
 	</servlet-mapping>	
-	<!-- 彩信网关sevlet -->
+        <servlet>
+                <description>http mo servlet</description>
+                <servlet-name>moRequest3665</servlet-name>
+                <servlet-class>com.lxt2.gateway.yz.http.api.HttpMOServlet</servlet-class>
+                <init-param>
+                        <param-name>dealRpt</param-name>
+                        <param-value>dealRpt3665</param-value>
+                </init-param>
+                <load-on-startup>1</load-on-startup>
+        </servlet>
+        <servlet-mapping>
+                <servlet-name>moRequest3665</servlet-name>
+                <url-pattern>/mo3665</url-pattern>
+        </servlet-mapping>	
+        <!-- 彩信网关sevlet -->
 	<servlet>
 		<description>mm7 mo servlet</description>
 		<servlet-name>moRequest</servlet-name>
